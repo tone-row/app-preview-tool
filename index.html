@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="/icon_small.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <title>App Preview</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html,
+        body,
+        iframe {
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe frameborder="none"></iframe>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/sw.js')
+                .then(function () { console.log("Service Worker Registered"); });
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const siteUrl = params.get('site');
+        document.querySelector('iframe').src = siteUrl;
+    </script>
+</body>
+
+</html>

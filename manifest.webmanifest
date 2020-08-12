@@ -1,0 +1,21 @@
+{
+    "name": "Preview",
+    "short_name": "Preview",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+          "src": "/icon_small.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "/icon.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ]
+  }
